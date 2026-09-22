@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="电影实时票房 - 提供最新电影票房数据、实时排行榜、排片信息及观影指南。专业、准确的电影市场动态监测平台。">
+    <meta name="keywords" content="电影实时票房,电影票房,实时票房榜,电影排片,国内电影票房">
+    <title>电影实时票房-最新票房数据与排片指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --secondary-color: #221f1f;
+            --accent-color: #46d369;
+            --text-color: #ffffff;
+            --text-secondary: #b3b3b3;
+            --bg-dark: #141414;
+            --bg-card: #1f1f1f;
+            --spacing-unit: 16px;
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #333;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            flex: 1;
+            padding: 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), url('https://picsum.photos/seed/cinema/1600/600') center/cover;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .live-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            border: 1px solid rgba(70, 211, 105, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        /* Main Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .search-bar {
+                display: none;
+            }
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 1rem 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border-bottom: 1px solid #333;
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .data-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #333;
+            vertical-align: middle;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background-color: rgba(255,255,255,0.03);
+        }
+
+        .rank-num {
+            font-weight: 700;
+            width: 40px;
+            text-align: center;
+        }
+
+        .rank-1 { color: #ffd700; }
+        .rank-2 { color: #c0c0c0; }
+        .rank-3 { color: #cd7f32; }
+
+        .movie-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .movie-poster {
+            width: 50px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 2px;
+            background-color: #000;
+        }
+
+        .movie-title {
+            font-weight: 600;
+            display: block;
+        }
+
+        .movie-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .box-office-amount {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .percentage {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .percentage.down {
+            color: #ff4d4d;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .news-list li {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .news-list a {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .news-list .date {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Categories Grid */
+        .categories-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .cat-btn {
+            background-color: var(--bg-card);
+            padding: 1rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .cat-btn:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            padding: 3rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                <span>CineBox</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索电影片名或导演...">
+                <button type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="live-badge">● 数据实时更新</div>
+            <h1>电影实时票房监测</h1>
+            <p>掌握最新市场动态，分析票房走势，为您的观影决策提供权威数据支持。</p>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Main Content: Box Office Chart -->
+            <article class="main-content">
+                <section class="card">
+                    <div class="card-header">
+                        <h2>实时票房排行榜</h2>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                            更新时间: <span id="update-time">--:--:--</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th width="60">排名</th>
+                                    <th>影片名称</th>
+                                    <th width="100">单日票房</th>
+                                    <th width="100">累计票房</th>
+                                    <th width="80">占比</th>
+                                    <th width="80">场次</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="rank-num rank-1">1</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie1/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">星际穿越：重映版</span>
+                                                <span class="movie-meta">科幻 / 冒险 / 2014</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">8,240万</td>
+                                    <td class="box-office-amount">142,500万</td>
+                                    <td class="percentage">28.5%</td>
+                                    <td>48,200</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-num rank-2">2</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie2/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">无名之辈</span>
+                                                <span class="movie-meta">剧情 / 犯罪 / 2018</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">6,105万</td>
+                                    <td class="box-office-amount">98,320万</td>
+                                    <td class="percentage">21.2%</td>
+                                    <td>45,100</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-num rank-3">3</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie3/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">深海历险记</span>
+                                                <span class="movie-meta">动画 / 奇幻 / 2023</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">4,580万</td>
+                                    <td class="box-office-amount">56,700万</td>
+                                    <td class="percentage">15.8%</td>
+                                    <td>32,400</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-num">4</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie4/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">满江红</span>
+                                                <span class="movie-meta">剧情 / 喜剧 / 历史</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">2,900万</td>
+                                    <td class="box-office-amount">45,200万</td>
+                                    <td class="percentage percentage down">-2.4%</td>
+                                    <td>28,100</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-num">5</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie5/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">流浪地球2</span>
+                                                <span class="movie-meta">科幻 / 灾难 / 2023</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">1,850万</td>
+                                    <td class="box-office-amount">40,150万</td>
+                                    <td class="percentage">9.1%</td>
+                                    <td>15,600</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-num">6</td>
+                                    <td>
+                                        <div class="movie-info">
+                                            <img src="https://picsum.photos/seed/movie6/100/150" alt="海报" class="movie-poster">
+                                            <div>
+                                                <span class="movie-title">长安三万里</span>
+                                                <span class="movie-meta">动画 / 历史 / 2023</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="box-office-amount">1,200万</td>
+                                    <td class="box-office-amount">18,900万</td>
+                                    <td class="percentage">6.3%</td>
+                                    <td>12,300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Hot Topics -->
+                <div class="sidebar-widget">
+                    <h3>热门话题</h3>
+                    <ul class="news-list">
+                        <li>
+                            <a href="#">春节档票房破纪录原因分析</a>
+                            <span class="date">2小时前</span>
+                        </li>
+                        <li>
+                            <a href="#">IMAX影厅观影指南与票价对比</a>
+                            <span class="date">5小时前</span>
+                        </li>
+                        <li>
+                            <a href="#">国产动画电影市场现状调研</a>
+                            <span class="date">1天前</span>
+                        </li>
+                        <li>
+                            <a href="#">电影票退改签新规解读</a>
+                            <span class="date">2天前</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Box Office Tips -->
+                <div class="sidebar-widget">
+                    <h3>观影小贴士</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">
+                        选择场次：避开首映高峰，选择工作日下午场通常体验更佳。
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        支付方式：部分平台购票有折扣，建议提前领取优惠券。
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <h2 class="section-title">热门分类</h2>
+            <div class="category-grid">
+                <div class="cat-btn">科幻片</div>
+                <div class="cat-btn">动作片</div>
+                <div class="cat-btn">爱情片</div>
+                <div class="cat-btn">喜剧片</div>
+                <div class="cat-btn">恐怖片</div>
+                <div class="cat-btn">动画片</div>
+                <div class="cat-btn">纪录片</div>
+                <div class="cat-btn">进口大片</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>CineBox 实时票房</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 300px;">
+                    专注提供最及时、最准确的电影票房数据查询服务，致力于成为影迷和业内人士的首选数据平台。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">数据说明</a></li>
+                    <li><a href="#">API接口</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">豆瓣小组</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 CineBox 实时票房监测平台. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的脚本用于模拟实时时间更新
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-CN', { hour12: false });
+            document.getElementById('update-time').textContent = timeString;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 简单的分类点击交互（仅视觉效果）
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 在实际应用中这里会跳转或筛选
+                const originalText = this.textContent;
+                this.style.backgroundColor = '#333';
+                setTimeout(() => {
+                    this.style.backgroundColor = 'var(--bg-card)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
