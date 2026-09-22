@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="决战奥格瑞玛 - 魔兽世界经典战役回顾、剧情解析与攻略指南。深入了解萨尔领导下的奥格瑞玛保卫战，探索部落基地的战略布局与最终决战详情。">
+    <meta name="keywords" content="决战奥格瑞玛, 魔兽世界, 部落基地, 烈焰王座, 魔兽剧情, 攻略">
+    <title>决战奥格瑞玛 - 魔兽世界经典战役回顾与攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #8a0d0d;
+            --dark-bg: #1a1a1a;
+            --card-bg: #252525;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-gold: #d4af37;
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        nav a.active {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: url('https://picsum.photos/seed/warcraft_bg/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-red);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 1px solid var(--primary-red);
+        }
+
+        .btn:hover {
+            background-color: #a01111;
+            color: #fff;
+        }
+
+        /* Main Layout */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent-gold);
+            padding-left: 15px;
+            color: #fff;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Content Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #000;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .sidebar-widget h4 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--accent-gold);
+        }
+
+        .list-group {
+            list-style: none;
+        }
+
+        .list-group li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        .list-group li:last-child {
+            border-bottom: none;
+        }
+
+        .list-group a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .list-group span {
+            color: var(--text-muted);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .map-point {
+            width: 150px;
+            height: 150px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        .map-point::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(138, 13, 13, 0.5);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .map-point h5 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .map-point p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-layout { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            .map-container { gap: 10px; }
+            .map-point { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">决战奥格瑞玛 <span>Guide</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">战役背景</a></li>
+                    <li><a href="#">BOSS攻略</a></li>
+                    <li><a href="#">装备掉落</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>决战奥格瑞玛</h1>
+            <p>重温魔兽世界史诗级团本体验，探索萨尔领导下的部落基地，直面加尔鲁什·地狱咆哮的最终审判。</p>
+            <a href="#guide" class="btn">查看详细攻略</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid-layout">
+            <!-- Main Content -->
+            <section class="content-area">
+                <h2 class="section-title">战役背景与剧情解析</h2>
+                
+                <article class="card">
+                    <img src="https://picsum.photos/seed/ogrimar_bg/800/400" alt="奥格瑞玛城市背景" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span>历史事件</span>
+                            <span>部落基地</span>
+                        </div>
+                        <h3>萨尔与加尔鲁什的权力交接</h3>
+                        <p>决战奥格瑞玛是《魔兽世界》4.0版本“大地的裂变”的最终团本。剧情紧接在卡雷苟斯带领艾泽拉斯联军攻占怒焰裂谷之后。此时，部落领袖萨尔在目睹了诺森德战场的惨烈与联盟的步步紧逼后，决定将指挥权移交给更具侵略性的儿子加尔鲁什·地狱咆哮。</p>
+                        <p>萨尔将奥格瑞玛的防御工事全权交给了加尔鲁什，后者在此期间强化了城墙，并布置了针对联盟的防御策略。最终，联盟与德莱尼、暗夜精灵等盟军发起了对奥格瑞玛的总攻，旨在终结加尔鲁什的暴政，拯救部落免于毁灭。</p>
+                        <a href="#">阅读更多剧情 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/firelands/800/400" alt="烈焰王座入口" class="card-image">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span>副本结构</span>
+                            <span>10人/25人/英雄模式</span>
+                        </div>
+                        <h3>烈焰王座：最终决战之地</h3>
+                        <p>奥格瑞玛内部被分割为两个区域：外围防御区与核心区域“烈焰王座”。玩家在突破外围防御后，将进入位于城市中心的烈焰王座。这里不仅是加尔鲁什的巢穴，也是他与基尔加丹残魂交汇的地点。</p>
+                        <p>副本设计充满了部落元素，从使用兽人武器到面对火焰与暗影的结合体，每一层都考验着团队的配合与爆发力。最终BOSS战是整个战役的高潮，玩家需要在毁灭性的火焰风暴中存活并击败加尔鲁什。</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h4>副本概况</h4>
+                    <ul class="list-group">
+                        <li><a href="#">副本等级: 85 (英雄85)</a></li>
+                        <li><a href="#">首领数量: 12 (10人) / 13 (25人)</a></li>
+                        <li><a href="#">地图名称: 烈焰王座</a></li>
+                        <li><a href="#">推荐职业: 猎人、法师、圣骑士</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4>热门攻略</h4>
+                    <ul class="list-group">
+                        <li><a href="#">伊格尼斯机制详解 <span>热</span></a></li>
+                        <li><a href="#">玛洛加尔跳跃教学</a></li>
+                        <li><a href="#">加尔鲁什怒风技能循环</a></li>
+                        <li><a href="#">装备掉落一览表</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4>战术提示</h4>
+                    <p style="font-size: 0.9rem; color: #bbb; margin-bottom: 10px;">
+                        在面对最终BOSS时，团队必须严格分散站位以避免死亡之握的连锁伤害。同时，注意观察环境中的“熔岩喷射”预警，及时打断关键技能。
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Map Visualization -->
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; border: none; padding: 0;">奥格瑞玛战略要地</h2>
+                <div class="map-container">
+                    <div class="map-point">
+                        <h5>城墙防线</h5>
+                        <p>外围防御区</p>
+                    </div>
+                    <div class="map-point">
+                        <h5>竞技场</h5>
+                        <p>加尔鲁什角斗场</p>
+                    </div>
+                    <div class="map-point">
+                        <h5>烈焰王座</h5>
+                        <p>核心区域</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 魔兽世界攻略指南. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #555;">
+                本站内容仅供学习交流使用，魔兽世界及相关商标属于暴雪娱乐公司。
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
