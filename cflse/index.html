@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CF绿色联盟官方首页，提供CF穿越火线游戏辅助工具、账号安全检测、防封号攻略及玩家社区交流服务。">
+    <meta name="keywords" content="cf绿色联盟,穿越火线辅助,CF防封号,CF绿色联盟官网,CF安全工具">
+    <title>cf绿色联盟-CF穿越火线防封号安全工具与玩家社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --primary-hover: #27ae60;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2c3e50;
+            --text-main: #ecf0f1;
+            --text-muted: #bdc3c7;
+            --accent-red: #e74c3c;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .header-cta:hover {
+            background-color: var(--primary-hover);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/cfbg/1600/600.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            border: 1px solid #34495e;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Safety Section */
+        .safety {
+            padding: 60px 0;
+            background-color: #232323;
+        }
+
+        .safety-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .safety-text {
+            flex: 1;
+        }
+
+        .safety-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .safety-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .safety-list .check-icon {
+            color: var(--primary-color);
+            margin-top: 4px;
+        }
+
+        .safety-visual {
+            flex: 1;
+            background: linear-gradient(135deg, #2c3e50, #000);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .safety-visual .shield-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .safety-badge {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* Download Section */
+        .download {
+            padding: 80px 0;
+            background: linear-gradient(to right, #1a1a1a, #252525);
+        }
+
+        .download-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .download-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .version-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .download-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn-download:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-download.secondary {
+            background-color: transparent;
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-download.secondary:hover {
+            border-color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .safety-content {
+                flex-direction: column;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>CF绿色联盟</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#community">玩家社区</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="header-cta">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>CF绿色联盟 <span class="highlight">守护您的游戏体验</span></h1>
+                <p>专为穿越火线（CF）玩家打造的安全辅助工具。致力于提供稳定、隐蔽、安全的游戏辅助方案，有效降低封号风险，提升游戏乐趣。</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">免费下载客户端</a>
+                    <a href="#features" class="btn btn-outline">了解功能特性</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心功能优势</h2>
+                    <p>技术驱动，安全为先，为您提供全方位的游戏辅助支持</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>智能防封检测</h3>
+                        <p>内置多重安全检测机制，实时监控游戏进程，有效识别并规避异常数据波动，大幅降低账号被封禁的风险。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>精准定位辅助</h3>
+                        <p>提供高精度的辅助功能，帮助玩家在竞技对战中更轻松地锁定目标，提升操作上限，享受更流畅的游戏体验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>低延迟优化</h3>
+                        <p>对游戏网络环境进行深度优化，减少延迟与卡顿，确保在激烈的枪战对决中保持流畅的帧率与响应速度。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>隐私数据保护</h3>
+                        <p>所有数据传输均经过加密处理，绝不收集玩家个人账号信息及游戏记录，保障您的隐私安全。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety/Trust Section -->
+        <section class="safety">
+            <div class="container">
+                <div class="safety-content">
+                    <div class="safety-text">
+                        <h2>为什么选择 CF绿色联盟？</h2>
+                        <p style="margin-bottom: 20px; color: var(--text-muted);">我们深知玩家对于封号的担忧，因此致力于打造一个安全、透明的辅助平台。</p>
+                        <ul class="safety-list">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>专业安全团队</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 5px;">由资深游戏安全专家开发，持续更新防护策略。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>纯净无广告环境</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 5px;">软件运行流畅，无弹窗广告干扰游戏体验。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <strong>7x24小时技术支持</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 5px;">遇到问题随时联系客服，快速响应解决。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="safety-visual">
+                        <span class="safety-badge">官方认证</span>
+                        <div class="shield-icon">🛡️</div>
+                        <h3>安全护航</h3>
+                        <p style="color: var(--text-muted);">多重防护体系，让您的游戏账号更安心。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download">
+            <div class="container">
+                <div class="download-card">
+                    <h3>下载最新版本</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">CF绿色联盟 v3.2.0 稳定版已发布</p>
+                    
+                    <div class="version-info">
+                        <span>更新日期：2023-10-25</span>
+                        <span>兼容系统：Windows 10/11</span>
+                        <span>文件大小：45.2 MB</span>
+                    </div>
+
+                    <div class="download-btn-group">
+                        <a href="#" class="btn btn-download">Windows 64位下载</a>
+                        <a href="#" class="btn btn-download secondary">查看更新日志</a>
+                        <a href="#" class="btn btn-download secondary">手机版助手</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于CF绿色联盟使用及安全的常见疑问</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>使用辅助会被封号吗？</h4>
+                        <p>CF绿色联盟采用智能算法模拟正常玩家操作，经过大量测试验证，在正常使用下封号风险极低。但请遵守游戏规则，合理使用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>软件是免费的吗？</h4>
+                        <p>本站提供基础功能的免费版供玩家体验，同时也提供高级会员服务以解锁更多个性化设置，具体请参考官网说明。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何安装和使用？</h4>
+                        <p>下载安装包后，关闭杀毒软件（误报除外），运行安装程序，按照向导提示完成安装。启动客户端后登录即可使用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>支持哪些游戏版本？</h4>
+                        <p>目前主要支持最新版CF穿越火线，并会根据官方版本更新及时调整兼容性，确保稳定运行。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>CF绿色联盟</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.8;">
+                        专注于穿越火线游戏安全辅助与优化服务，致力于为广大CF玩家提供最优质的辅助工具。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">下载中心</a></li>
+                        <li><a href="#">版本更新</a></li>
+                        <li><a href="#">帮助文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区支持</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">QQ交流群</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">客服邮箱：support@cfgreen.com</a></li>
+                        <li><a href="#">工作时间：9:00 - 22:00</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CF绿色联盟. All Rights Reserved. 本站仅为技术交流与资源分享平台。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
