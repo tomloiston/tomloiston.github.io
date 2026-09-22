@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="碘化银 (Silver Iodide) 专业资讯平台，提供工业级与农业级碘化银的物理化学性质、制备方法、人工增雨催化原理及安全防护指南。">
+    <meta name="keywords" content="碘化银, 银碘化物, 人工增雨, 化学试剂, AgI, 物理性质, 安全防护">
+    <title>碘化银-工业化学试剂与人工增雨催化材料专业指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-light: #f8f9fa;
+            --text-main: #333;
+            --text-secondary: #666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            padding-right: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* Properties Grid */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .property-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .property-card h3 {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .property-card .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 20px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-block {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-block h3 {
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .info-block p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .info-block ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .info-block li {
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .sidebar-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #eef2f3;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .tag:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Safety Alert */
+        .alert-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .alert-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            nav ul {
+                margin: 10px 0;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>AgI</span> 碘化银专业指南
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#properties">物理化学</a></li>
+                    <li><a href="#applications">应用领域</a></li>
+                    <li><a href="#safety">安全规范</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">联系专家</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>深入解析碘化银 (AgI)</h1>
+                <p>从人工增雨的催化剂核心到精密化学试剂，全面了解银碘化物的性质、制备与安全防护。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索化学性质、制备工艺或应用场景...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Main Content -->
+            <div class="main-content">
+                
+                <!-- Properties Section -->
+                <section id="properties">
+                    <div class="section-header">
+                        <h2 class="section-title">物理化学性质</h2>
+                    </div>
+                    <div class="properties-grid">
+                        <article class="property-card">
+                            <h3>化学式</h3>
+                            <div class="value">AgI</div>
+                        </article>
+                        <article class="property-card">
+                            <h3>外观</h3>
+                            <div class="value">黄色晶体/粉末</div>
+                        </article>
+                        <article class="property-card">
+                            <h3>摩尔质量</h3>
+                            <div class="value">234.77 g/mol</div>
+                        </article>
+                        <article class="property-card">
+                            <h3>溶解性</h3>
+                            <div class="value">难溶于水，溶于氰化钾、氨水</div>
+                        </article>
+                        <article class="property-card">
+                            <h3>晶体结构</h3>
+                            <div class="value">六方晶系</div>
+                        </article>
+                        <article class="property-card">
+                            <h3>熔点</h3>
+                            <div class="value">552 °C</div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Applications Section -->
+                <section id="applications">
+                    <div class="section-header">
+                        <h2 class="section-title">主要应用领域</h2>
+                    </div>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'weather')">人工增雨</button>
+                        <button class="tab-btn" onclick="openTab(event, 'photo')">感光材料</button>
+                        <button class="tab-btn" onclick="openTab(event, 'medical')">医疗用途</button>
+                    </div>
+
+                    <div id="weather" class="tab-content active">
+                        <div class="info-block">
+                            <h3>人工增雨催化原理</h3>
+                            <p>碘化银是应用最广泛的人工影响天气催化剂。其核心原理在于<strong>冰晶效应</strong>。</p>
+                            <p>碘化银晶体结构与天然冰晶极为相似（均为六方结构），当其颗粒进入云层后，能够充当“冰核”，促使过冷水滴在晶核上冻结成冰晶。这些冰晶在重力作用下下沉，并吸收周围的水汽凝结成更大的冰粒，最终形成降雨或降雪。</p>
+                            <ul>
+                                <li><strong>播撒方式：</strong>飞机播撒、高射炮/火箭弹携带发射、地面燃烧发生器。</li>
+                                <li><strong>关键条件：</strong>需在温度低于0°C的冷云或混合云中效果最佳。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="photo" class="tab-content">
+                        <div class="info-block">
+                            <h3>传统感光材料</h3>
+                            <p>碘化银曾是人类历史上最重要的感光材料之一。在早期的黑白胶卷和相纸中，碘化银与溴化银混合使用，作为感光中心。</p>
+                            <p>在卤化银乳剂中，碘离子的引入能显著提高感光材料的灰雾度和反差，同时改善颗粒度。虽然现代数码摄影已取代了大部分传统银盐摄影，但碘化银感光技术仍在特种成像、天文观测底片等领域保留应用。</p>
+                        </div>
+                    </div>
+
+                    <div id="medical" class="tab-content">
+                        <div class="info-block">
+                            <h3>医疗与生物用途</h3>
+                            <p>碘化银在医疗领域主要用于伤口敷料和眼部治疗。</p>
+                            <ul>
+                                <li><strong>伤口敷料：</strong>含有碘化银的敷料具有广谱抗菌作用，可减少感染风险，促进伤口愈合。</li>
+                                <li><strong>眼科治疗：</strong>0.5%的碘化钾溶液曾用于治疗沙眼（现已较少使用，因副作用和疗效有限）。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Safety Section -->
+                <section id="safety">
+                    <div class="section-header">
+                        <h2 class="section-title">安全与防护指南</h2>
+                    </div>
+                    <div class="info-block">
+                        <h3>健康危害</h3>
+                        <p>碘化银本身毒性较低，但其离子（Ag⁺）具有杀菌作用。长期或大量接触可能导致皮肤过敏、眼结膜炎或皮肤色素沉着（变黑）。</p>
+                        <h3>防护措施</h3>
+                        <ul>
+                            <li><strong>呼吸防护：</strong>在粉尘环境下操作时，建议佩戴防尘口罩或半面罩呼吸器。</li>
+                            <li><strong>皮肤防护：</strong>操作时应佩戴橡胶手套，避免皮肤直接接触粉末。若不慎沾染，立即用大量清水冲洗。</li>
+                            <li><strong>眼部防护：</strong>避免粉尘进入眼睛，必要时佩戴护目镜。</li>
+                        </ul>
+                        <div class="alert-box">
+                            <span class="alert-icon">⚠️</span>
+                            <div>
+                                <strong>特别提示：</strong>碘化银遇酸会释放有毒的碘化氢气体，操作时需远离酸性物质和强酸环境。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>热门分类</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">工业级 AgI 粉末规格</a></li>
+                        <li><a href="#">人工增雨火箭弹</a></li>
+                        <li><a href="#">感光材料配方</a></li>
+                        <li><a href="#">实验室制备方法</a></li>
+                        <li><a href="#">环境监测标准</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>相关标签</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">人工降雨</span>
+                        <span class="tag">催化剂</span>
+                        <span class="tag">卤化银</span>
+                        <span class="tag">气象学</span>
+                        <span class="tag">摄影</span>
+                        <span class="tag">化学试剂</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>快速链接</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">国家气象局指南</a></li>
+                        <li><a href="#">化学品安全技术说明书 (MSDS)</a></li>
+                        <li><a href="#">实验室安全管理规范</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>AgI 碘化银指南</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于提供最权威的化学试剂数据、气象应用知识及安全防护信息。</p>
+            </div>
+            <div class="footer-col">
+                <h4>内容栏目</h4>
+                <ul>
+                    <li><a href="#">基础化学性质</a></li>
+                    <li><a href="#">人工增雨技术</a></li>
+                    <li><a href="#">安全操作手册</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>参考资料</h4>
+                <ul>
+                    <li><a href="#">化学文摘 (CAS)</a></li>
+                    <li><a href="#">气象学期刊</a></li>
+                    <li><a href="#">职业安全标准</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 碘化银专业资料库. All Rights Reserved. 本站内容仅供学术与安全参考，不作为商业交易依据。
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // 隐藏所有 tab 内容
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 移除所有 tab 按钮的 active 状态
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // 显示当前 tab 并添加 active 类
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // 简单的平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
