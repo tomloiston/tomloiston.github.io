@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="穿越火线单机版 - 永恒战士单机游戏攻略、地图下载、武器推荐及游戏玩法详解。提供经典战役模式、挑战模式及僵尸模式的无网络联机体验指南。">
+    <meta name="keywords" content="穿越火线单机版,CF单机,CF永恒战士,CF单机下载,CF无网络游戏,CF单机攻略">
+    <title>穿越火线单机版-经典战役与挑战模式无网络联机体验指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a651; /* CF 绿 */
+            --primary-dark: #007a3d;
+            --accent-color: #f39c12; /* 金属金 */
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/cf_bg/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Game Modes Section */
+        .modes {
+            padding: 60px 0;
+            background-color: #1f1f1f;
+        }
+
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .mode-card {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            group: mode;
+        }
+
+        .mode-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .mode-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+
+        .mode-card:hover .mode-bg {
+            transform: scale(1.05);
+        }
+
+        .mode-tag {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 2px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .mode-card h3 {
+            font-size: 24px;
+        }
+
+        /* Download Guide */
+        .download-guide {
+            padding: 60px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .guide-steps {
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .download-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .file-info {
+            margin: 20px 0;
+            text-align: left;
+            background: #333;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .file-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .file-row span:last-child {
+            color: var(--accent-color);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            background-color: #1f1f1f;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .mode-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">CF <span>Single</span></a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#modes">游戏模式</a></li>
+                    <li><a href="#download">下载指南</a></li>
+                    <li><a href="#guide">攻略资讯</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>重温经典 <span>穿越火线单机版</span></h1>
+                <p>无需联网，随时随地体验CF核心玩法。经典战役、无尽挑战、僵尸围城，在本地硬盘中重温热血战场。</p>
+                <div style="margin-bottom: 20px;">
+                    <a href="#download" class="btn">立即下载</a>
+                    <a href="#modes" class="btn btn-outline" style="margin-left: 10px;">查看模式</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>关卡战役</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>特色武器</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>网络延迟</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">为什么选择单机版？</div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速体验，无需等待</h3>
+                        <p>跳过繁琐的排队和匹配过程，点击即玩，享受纯粹的射击乐趣，无需担心网络波动影响游戏体验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全无忧，绿色纯净</h3>
+                        <p>本地运行，无外挂风险，无弹窗广告干扰，专注游戏本身，为玩家提供一个干净、绿色的游戏环境。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>离线联机，朋友同乐</h3>
+                        <p>支持局域网离线联机，与身边的朋友在同一台电脑上对战，还原真实的团队竞技快感。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Modes -->
+        <section id="modes" class="modes">
+            <div class="container">
+                <div class="section-title">
+                    核心玩法模式
+                    <a href="#" style="font-size: 14px; color: var(--primary-color);">查看全部 &rarr;</a>
+                </div>
+                <div class="mode-grid">
+                    <div class="mode-card">
+                        <img src="https://picsum.photos/seed/cf_campaign/600/400.jpg" alt="战役模式" class="mode-bg">
+                        <div class="mode-overlay">
+                            <span class="mode-tag">剧情向</span>
+                            <h3>经典战役模式</h3>
+                            <p style="font-size: 14px; margin-top: 5px; color: #ddd;">体验原汁原味的剧情故事，从沙漠-1到金字塔，重温反恐精英的荣耀时刻。</p>
+                        </div>
+                    </div>
+                    <div class="mode-card">
+                        <img src="https://picsum.photos/seed/cf_zombie/600/400.jpg" alt="僵尸模式" class="mode-bg">
+                        <div class="mode-overlay">
+                            <span class="mode-tag" style="background-color: #e74c3c;">生存向</span>
+                            <h3>僵尸围城模式</h3>
+                            <p style="font-size: 14px; margin-top: 5px; color: #ddd;">利用地形和武器对抗无限生成的僵尸，挑战人类生存极限。</p>
+                        </div>
+                    </div>
+                    <div class="mode-card">
+                        <img src="https://picsum.photos/seed/cf_chaos/600/400.jpg" alt="挑战模式" class="mode-bg">
+                        <div class="mode-overlay">
+                            <span class="mode-tag" style="background-color: #9b59b6;">高难度</span>
+                            <h3>无尽挑战模式</h3>
+                            <p style="font-size: 14px; margin-top: 5px; color: #ddd;">面对强大的BOSS和潮水般的敌人，考验玩家操作与装备搭配。</p>
+                        </div>
+                    </div>
+                    <div class="mode-card">
+                        <img src="https://picsum.photos/seed/cf_sniper/600/400.jpg" alt="团队竞技" class="mode-bg">
+                        <div class="mode-overlay">
+                            <span class="mode-tag" style="background-color: #3498db;">竞技向</span>
+                            <h3>团队死斗模式</h3>
+                            <p style="font-size: 14px; margin-top: 5px; color: #ddd;">快速交火，比拼击杀数，体验最纯粹的CS式射击快感。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download & Guide -->
+        <section id="download" class="download-guide">
+            <div class="container">
+                <div class="section-title">下载与安装指南</div>
+                <div class="guide-container">
+                    <div class="guide-text">
+                        <h3>如何开始你的单机之旅？</h3>
+                        <p>穿越火线单机版（通常指基于CF引擎的MOD版本，如永恒战士等）是一款无需联网即可运行的游戏。以下是标准安装流程：</p>
+                        
+                        <div class="guide-steps">
+                            <div class="step">
+                                <div class="step-num">1</div>
+                                <div class="step-content">
+                                    <h4>下载安装包</h4>
+                                    <p>从可靠的资源站下载游戏压缩包，确保文件完整无损。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">2</div>
+                                <div class="step-content">
+                                    <h4>解压与运行</h4>
+                                    <p>将文件解压到任意非系统盘符，双击“CF单机版.exe”启动游戏。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">3</div>
+                                <div class="step-content">
+                                    <h4>选择模式</h4>
+                                    <p>在主菜单选择“战役”、“挑战”或“僵尸”模式开始游戏。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>注意：部分版本可能需要安装 DirectX 9.0c 或 Visual C++ 运行库才能正常运行。</p>
+                    </div>
+
+                    <div class="download-box">
+                        <h3 style="color: white; margin-bottom: 10px;">最新版本</h3>
+                        <p style="font-size: 14px; color: var(--text-muted);">支持 Windows 7 / 10 / 11</p>
+                        
+                        <div class="file-info">
+                            <div class="file-row">
+                                <span>文件名:</span>
+                                <span>CF_SinglePlayer_v3.2.exe</span>
+                            </div>
+                            <div class="file-row">
+                                <span>大小:</span>
+                                <span>1.8 GB</span>
+                            </div>
+                            <div class="file-row">
+                                <span>MD5:</span>
+                                <span>Verified</span>
+                            </div>
+                        </div>
+
+                        <button class="btn" style="width: 100%; padding: 12px;">开始下载</button>
+                        <p style="font-size: 12px; margin-top: 15px; color: #666;">* 下载即表示同意遵守本地使用协议</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">常见问题 (FAQ)</div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">单机版和网络游戏有什么区别？</div>
+                        <div class="faq-answer">
+                            单机版去除了联网匹配功能，专注于剧情体验和本地游玩。它拥有独立的地图和武器配置，通常包含更多关卡和自定义内容，且完全免费。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载后打不开游戏怎么办？</div>
+                        <div class="faq-answer">
+                            请检查电脑是否安装了必要的运行库（如 .NET Framework, DirectX）。如果是绿色免安装版，确保解压路径中没有中文名称或特殊符号。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持多人联机吗？</div>
+                        <div class="faq-answer">
+                            部分单机MOD版本支持局域网联机功能，可以在同一台路由器下的多台电脑上进行对战。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">游戏画面卡顿怎么解决？</div>
+                        <div class="faq-answer">
+                            单机版对配置要求相对较低。如果卡顿，建议降低游戏内的“分辨率”和“特效质量”，并关闭其他后台程序。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 13px; line-height: 1.8;">
+                        本站致力于为CF爱好者提供最全面、最安全的单机版资源与攻略。所有游戏资源仅供学习交流，请支持正版游戏。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">地图MOD</a></li>
+                        <li><a href="#">武器皮肤</a></li>
+                        <li><a href="#">玩家论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">合作推广</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 穿越火线单机版资源站 版权所有. 本站内容均为用户分享或整理，不代表本站立场。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('#main-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    nav.classList.remove('active');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                              </html>
