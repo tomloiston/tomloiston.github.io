@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄联盟头像 - 英雄联盟玩家头像素材库与免费下载</title>
+    <meta name="description" content="英雄联盟头像（League of Legends Avatars）素材库，提供海量LOL英雄高清头像、皮肤头像、游戏截图及头像框素材，支持免费下载与在线预览。">
+    <meta name="keywords" content="英雄联盟头像,LOL头像,英雄联盟素材,游戏头像,英雄头像">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c89b3b;
+            --primary-hover: #e0b44c;
+            --bg-color: #0f1014;
+            --card-bg: #1a1c23;
+            --text-main: #f0f0f0;
+            --text-sub: #a0a0a0;
+            --border-color: #2d2f36;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 16, 20, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            outline: none;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a2d36 0%, var(--bg-color) 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--card-bg);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-download {
+            background: var(--primary-color);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .card-info {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar & Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        aside h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .count {
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0b0e;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        .badge-hot { background: rgba(200, 155, 59, 0.2); color: var(--primary-color); }
+        .badge-new { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                LOL<span>Avatar</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">英雄专区</a></li>
+                    <li><a href="#">皮肤展示</a></li>
+                    <li><a href="#">高清大图</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索头像...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>英雄联盟头像素材库</h1>
+            <p>收录全球玩家喜爱的英雄联盟头像，包含全英雄默认立绘、炫酷皮肤形象及游戏内头像框资源。</p>
+            <div class="hero-tags">
+                <span class="tag">默认头像</span>
+                <span class="tag">2024皮肤</span>
+                <span class="tag">国服限定</span>
+                <span class="tag">高清壁纸</span>
+                <span class="tag">头像框</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <section>
+                <div class="section-title">
+                    <span>热门推荐</span>
+                    <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看全部 &rarr;</a>
+                </div>
+
+                <div class="grid-container">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/ahri/400/400" alt="阿狸头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">九尾妖狐 - 阿狸</h3>
+                            <div class="card-meta">
+                                <span><span class="badge badge-hot">热门</span>默认立绘</span>
+                                <span>2.4k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/zed/400/400" alt="亚索头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">疾风剑豪 - 亚索</h3>
+                            <div class="card-meta">
+                                <span><span class="badge badge-new">新图</span>经典形象</span>
+                                <span>1.8k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/missfortune/400/400" alt="厄运小姐头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">赏金猎人 - 厄运小姐</h3>
+                            <div class="card-meta">
+                                <span>皮肤系列</span>
+                                <span>3.1k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/thresh/400/400" alt="锤石头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">钩锁使者 - 锤石</h3>
+                            <div class="card-meta">
+                                <span>默认立绘</span>
+                                <span>1.2k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/jinx/400/400" alt="金克丝头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">暴走萝莉 - 金克丝</h3>
+                            <div class="card-meta">
+                                <span><span class="badge badge-hot">热门</span>皮肤形象</span>
+                                <span>4.5k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/yasuo/400/400" alt="亚索头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">疾风剑豪 - 亚索</h3>
+                            <div class="card-meta">
+                                <span>默认立绘</span>
+                                <span>1.8k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                     <!-- Card 7 -->
+                     <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/akali/400/400" alt="阿卡丽头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">夜之魔影 - 阿卡丽</h3>
+                            <div class="card-meta">
+                                <span>皮肤系列</span>
+                                <span>2.0k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+
+                     <!-- Card 8 -->
+                     <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/teemo/400/400" alt="提莫头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">迅捷斥候 - 提莫</h3>
+                            <div class="card-meta">
+                                <span>默认立绘</span>
+                                <span>1.5k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-title" style="margin-top: 3rem;">
+                    <span>最新上传</span>
+                </div>
+                <div class="grid-container">
+                    <!-- Repeat grid items for latest uploads -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/garen/400/400" alt="盖伦头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">德玛西亚之力 - 盖伦</h3>
+                            <div class="card-meta">
+                                <span>默认立绘</span>
+                                <span>900 下载</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/lux/400/400" alt="拉克丝头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">光辉女郎 - 拉克丝</h3>
+                            <div class="card-meta">
+                                <span>皮肤系列</span>
+                                <span>1.2k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <img src="https://picsum.photos/seed/vayne/400/400" alt="薇恩头像" class="card-img">
+                            <div class="card-overlay">
+                                <a href="#" class="btn-download">下载</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">暗夜猎手 - 薇恩</h3>
+                            <div class="card-meta">
+                                <span>默认立绘</span>
+                                <span>2.1k 下载</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <h3>分类浏览</h3>
+                <ul class="category-list">
+                    <li><a href="#">全英雄默认立绘 <span class="count">156</span></a></li>
+                    <li><a href="#">2024夏季赛皮肤 <span class="count">42</span></a></li>
+                    <li><a href="#">经典原画系列 <span class="count">89</span></a></li>
+                    <li><a href="#">国服限定头像框 <span class="count">12</span></a></li>
+                    <li><a href="#">Q版可爱头像 <span class="count">34</span></a></li>
+                    <li><a href="#">电竞战队头像 <span class="count">28</span></a></li>
+                </ul>
+
+                <h3 style="margin-top: 2rem;">使用指南</h3>
+                <ul class="category-list">
+                    <li><a href="#">如何设置LOL头像</a></li>
+                    <li><a href="#">头像框获取方式</a></li>
+                    <li><a href="#">高清素材下载说明</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-title">
+                <span>常见问题 (FAQ)</span>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">这些头像可以直接在游戏中使用吗？</div>
+                <div class="faq-answer">部分“默认立绘”和“经典形象”可以直接在游戏客户端的个人资料设置中上传使用。皮肤系列图片通常仅作为桌面壁纸或社交媒体素材，无法直接导入游戏。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">下载的图片清晰度如何？</div>
+                <div class="faq-answer">本站所有素材均经过筛选，保证至少为 1024x1024 像素的高清图片，适合在手机、电脑或平板上显示。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">这些图片有版权问题吗？</div>
+                <div class="faq-answer">本站收录的图片仅供个人学习和欣赏使用，请勿用于商业用途。素材版权归原作者及Riot Games所有。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">提交素材</a>
+                <a href="#">联系管理员</a>
+            </div>
+            <p class="copyright">© 2024 LOLAvatar 素材库. All rights reserved. 本站非Riot Games官方网站。</p>
+        </div>
+    </footer>
+
+</body>
+          </html>
